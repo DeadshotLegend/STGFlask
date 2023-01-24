@@ -10,7 +10,6 @@ These object can be used throughout project.
 """
 
 # Setup of key Flask object (app)
-print("Creating app")
 app = Flask(__name__)
 
 
@@ -19,6 +18,8 @@ dbURI = 'sqlite:///../volumes/sqlite.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 app.config['SECRET_KEY'] = 'SECRET_KEY'
+print("Creating app")
+print(dbURI)
 db = SQLAlchemy(app)
 Migrate(app, db)
 

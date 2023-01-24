@@ -200,6 +200,7 @@ class User(db.Model):
 # Builds working data for testing
 def initUsers():
     """Create database and tables"""
+    app.app_context().push()
     db.create_all()
     """Tester data for table"""
     u1 = User(name='Thomas Edison', uid='toby', password='123toby', dob=date(1847, 2, 11))
@@ -223,4 +224,7 @@ def initUsers():
             '''fails with bad or duplicate data'''
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {user.uid}")
-            
+
+
+print("Shauya is dummy")
+initUsers()

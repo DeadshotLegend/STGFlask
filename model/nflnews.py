@@ -18,89 +18,89 @@ class NFLNews(db.Model):
 
     # Defining the Object Variable
 
-
+    id = db.Column(db.Integer, primary_key=True)
     _teams = db.Column(db.String(255), unique=False, nullable=False)
     _score = db.Column(db.String(255), unique=False, nullable=False)
     _type = db.Column(db.String(255), unique=False, nullable=False)
     _day = db.Column(db.Date)
 
-    # Constructor of a User object, initializes the instance variables within object (self)
+    # Constructor of a NFLNews object, initializes the instance variables within object (self)
 
-    def __init__(own, teams, score, type, day=date.today()):
+    def __init__(self, teams, score, type, day=date.today()):
 
-        own._teams = teams    # variables with "own"" prefix become part of the object
-        own._score = score
-        own._type = type
-        own._day = day
+        self._teams = teams    # variables with "own"" prefix become part of the object
+        self._score = score
+        self._type = type
+        self._day = day
 
     # Getter and setter methods for all variables
 
     @property
-    def teams(own):
-        return own._teams
+    def teams(self):
+        return self._teams
     
     @teams.setter
-    def teams(own, teams):
-        own._teams = teams
+    def teams(self, teams):
+        self._teams = teams
     
     @property
-    def score(own):
-        return own._score
+    def score(self):
+        return self._score
     
     @score.setter
-    def score(own, score):
-        own.score = score
+    def score(self, score):
+        self.score = score
 
 
     @property
-    def type(own):
-        return own.type
+    def type(self):
+        return self.type
     
     @type.setter
-    def score(own, type):
-        own.type = type
+    def score(self, type):
+        self.type = type
 
       
     @property
-    def day(own):
-        day_string = own._day.strftime('%m-%d-%Y')
+    def day(self):
+        day_string = self._day.strftime('%m-%d-%Y')
         return day_string
     
 
     @day.setter
-    def day(own, day):
-        own._day = day
+    def day(self, day):
+        self._day = day
     
     
     
   
-    def __str__(own):
-        return json.dumps(own.read())
+    def __str__(self):
+        return json.dumps(self.read())
 
     
-    def create(own):
+    def create(self):
         try:
-            # creates a person object from User(db.Model) class, passes initializers
-            db.session.add(own)  # add prepares to persist person object to Users table
+            # creates a NFL News object from NFLNews(db.Model) class, passes initializers
+            db.session.add(self)  # add prepares to persist NFL News object to NFLNews table
             db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
-            return own
+            return self
         except IntegrityError:
             db.session.remove()
             return None
 
 
-    def read(own):
+    def read(self):
         return {
-
-            "teams": own.teams,
-            "score": own.score,
-            "type": own.type,
-            "day": own.day
+            "id": self.id,
+            "teams": self.teams,
+            "score": self.score,
+            "type": self.type,
+            "day": self.day
             
         }
     
-    def delete(own):
-        db.session.delete(own)
+    def delete(self):
+        db.session.delete(self)
         db.session.commit()
         return None
 
@@ -127,3 +127,6 @@ def initNFLNews():
             '''fails with bad or duplicate data'''
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {news.uid}")
+
+print("Testing")
+initNFLNews()
