@@ -20,99 +20,98 @@ class NFLNews(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     _teams = db.Column(db.String(255), unique=False, nullable=False)
-    _score = db.Column(db.Integer, primary_key=True)
-    _record = db.Column(db.String(255), unique=False, nullable=False)
+    _score = db.Column(db.String(255), unique=False, nullable=False)
+    _type = db.Column(db.String(255), unique=False, nullable=False)
+    _day = db.Column(db.Date)
 
     # Constructor of a User object, initializes the instance variables within object (self)
 
-    def __init__(teams, score, network, day=date.today()):
-        self._teams = title    # variables with self prefix become part of the object, 
-        self._network = network
-        self._day = day
+    def __init__(own, teams, score, type, day=date.today()):
+        own._teams = teams    # variables with "own"" prefix become part of the object
+        own._score = score
+        own._type = type
+        own._day = day
 
-    # a name getter method, extracts name from object
+    # Getter and setter methods for all variables
     @property
-    def title(self):
-        return self._teams
+    def teams(own):
+        return own._teams
     
-    # a setter function, allows name to be updated after initial object creation
-    @title.setter
-    def title(self, title):
-        self._teams = title
+    @teams.setter
+    def teams(own, teams):
+        own._teams = teams
     
-    # a getter method, extracts email from object
     @property
-    def network(self):
-        return self._network
+    def score(own):
+        return own._
     
-    # a setter function, allows name to be updated after initial object creation
-    @network.setter
-    def network(self, network):
-        self._network = network
+    @score.setter
+    def score(own, score):
+        own.score = score
         
-    # check if uid parameter matches user id in object, return boolean
-    def is_network(self, network):
-        return self._network == network
+
+    def is_score(own, score):
+        return own._score == score
       
-    # dob property is returned as string, to avoid unfriendly outcomes
     @property
-    def day(self):
-        day_string = self._day.strftime('%m-%d-%Y')
+    def day(own):
+        day_string = own._day.strftime('%m-%d-%Y')
         return day_string
     
-    # dob should be have verification for type date
+
     @day.setter
-    def day(self, day):
-        self._day = day
+    def day(own, day):
+        own._day = day
     
     @property
-    def age(self):
+    def age(own):
         today = date.today()
-        return today.year - self._day.year - ((today.month, today.day) < (self._day.month, self._day.day))
+        return today.year - own._day.year - ((today.month, today.day) < (own._day.month, own._day.day))
     
     # output content using str(object) in human readable form, uses getter
     # output content using json dumps, this is ready for API response
-    def __str__(self):
-        return json.dumps(self.read())
+    def __str__(own):
+        return json.dumps(own.read())
 
     # CRUD create/add a new record to the table
     # returns self or None on error
-    def create(self):
+    def create(own):
         try:
             # creates a person object from User(db.Model) class, passes initializers
-            db.session.add(self)  # add prepares to persist person object to Users table
+            db.session.add(own)  # add prepares to persist person object to Users table
             db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
-            return self
+            return own
         except IntegrityError:
             db.session.remove()
             return None
 
     # CRUD read converts self to dictionary
     # returns dictionary
-    def read(self):
+    def read(own):
         return {
-            "id": self.id,
-            "title": self.title,
-            "network": self.network,
-            "day": self.day,
-            "age": self.age
+
+            "teams": own.teams,
+            "score": own.score,
+            "age": own.age,
+            "day": own.day
+            
         }
 
     # CRUD update: updates user name, password, phone
     # returns self
-    def update(self, title="", network=""):
+    def update(own, teams="", score=""):
         """only updates values with length"""
-        if len(title) > 0:
-            self.title = title
-        if len(network) > 0:
-            self.network = network
+        if len(teams) > 0:
+            own.teams = teams
+        if len(score) > 0:
+            own.score = score
         db.session.commit()
-        return self
+        return own
 
     # CRUD delete: remove self
     # None
-    def delete(self):
-        db.session.delete(self)
+    def delete(own):
+        db.session.delete(own)
         db.session.commit()
         return None
 
