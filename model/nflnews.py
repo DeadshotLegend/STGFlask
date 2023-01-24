@@ -14,7 +14,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
     # Defining the NFLNews class to manage actions in the 'news' table
 
 class NFLNews(db.Model):
-    __tablename__ = 'NFL News'  
+    __tablename__ = 'NFLNews'  
 
     # Defining the Object Variable
 
