@@ -114,9 +114,14 @@ def initNFLNews():
     db.create_all()
     """Tester data for table"""
     u1 = NFLNews(teams = 'Bufallo Bils vs Cincanatti Bengals', score='10:27', type = 'Divisonal Round', day=date(2023, 1, 22))
+    u2 = NFLNews(teams = 'Dallas Cowboys vs San Francisco 49ers', score='12:19', type = 'Divisonal Round', day=date(2023, 1, 22))
+    u3 = NFLNews(teams = 'New York Giants vs Philadelphia Eagles', score='7:37', type = 'Divisonal Round', day=date(2023, 1, 22))
+    u4 = NFLNews(teams = 'Jacksonville Jaguars vs Kansas City Cheifs', score='20:27', type = 'Divisonal Round', day=date(2023, 1, 22))
+    u5 = NFLNews(teams = 'Dallas Cowboys vs Tampa Bay Buccanears', score='31:14', type = 'Wildcard Round', day=date(2023, 1, 22))
+    u6 = NFLNews(teams = 'Baltimore Ravens vs Cincanatti Bengals', score='17:24', type = 'Wildcard Round', day=date(2023, 1, 22))
 
     
-    nfl_news = [u1]
+    nfl_news = [u1, u2, u3, u4, u5, u6]
 
 
     """Builds sample user/note(s) data"""
