@@ -133,4 +133,5 @@ def initNFLNews():
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {news.uid}")
 
-
+print("Testing")
+initNFLNews()
