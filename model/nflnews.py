@@ -16,29 +16,29 @@ from werkzeug.security import generate_password_hash, check_password_hash
 class NFLNews(db.Model):
     __tablename__ = 'NFL News'  
 
-    # Defining the User schema with "vars" from object
+    # Defining the User Constructor
 
     id = db.Column(db.Integer, primary_key=True)
-    _title = db.Column(db.String(255), unique=False, nullable=False)
-    _network = db.Column(db.String(255), unique=False, nullable=False)
-    _day = db.Column(db.Date)
+    _teams = db.Column(db.String(255), unique=False, nullable=False)
+    _score = db.Column(db.Integer, primary_key=True)
+    _record = db.Column(db.String(255), unique=False, nullable=False)
 
     # Constructor of a User object, initializes the instance variables within object (self)
 
-    def __init__(self, title, network, day=date.today()):
-        self._title = title    # variables with self prefix become part of the object, 
+    def __init__(teams, score, network, day=date.today()):
+        self._teams = title    # variables with self prefix become part of the object, 
         self._network = network
         self._day = day
 
     # a name getter method, extracts name from object
     @property
     def title(self):
-        return self._title
+        return self._teams
     
     # a setter function, allows name to be updated after initial object creation
     @title.setter
     def title(self, title):
-        self._title = title
+        self._teams = title
     
     # a getter method, extracts email from object
     @property
