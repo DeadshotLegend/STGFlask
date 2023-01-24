@@ -49,16 +49,16 @@ class NFLNews(db.Model):
     
     @score.setter
     def score(self, score):
-        self.score = score
+        self._score = score
 
 
     @property
     def type(self):
-        return self.type
+        return self._type
     
     @type.setter
-    def score(self, type):
-        self.type = type
+    def type(self, type):
+        self._type = type
 
       
     @property
@@ -110,6 +110,7 @@ class NFLNews(db.Model):
 # Builds working data for testing
 
 def initNFLNews():
+    print("Creating test data")
     """Create database and tables"""
     db.create_all()
     """Tester data for table"""
@@ -132,6 +133,3 @@ def initNFLNews():
             '''fails with bad or duplicate data'''
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {news.uid}")
-
-print("Testing")
-initNFLNews()

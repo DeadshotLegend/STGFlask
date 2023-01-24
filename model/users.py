@@ -226,5 +226,3 @@ def initUsers():
             print(f"Records exist, duplicate email, or error: {user.uid}")
 
 
-print("Shauya is dummy")
-initUsers()
