@@ -19,10 +19,10 @@ class NFLNews(db.Model):
     # Defining the Object Variable
 
     id = db.Column(db.Integer, primary_key=True)
-    _teams = db.Column(db.String(255), unique=False, nullable=False)
-    _score = db.Column(db.String(255), unique=False, nullable=False)
-    _type = db.Column(db.String(255), unique=False, nullable=False)
-    _day = db.Column(db.Date)
+    _team = db.Column(db.String(255), unique=False, nullable=False)
+    _gamesplayed = db.Column(db.Integer, primary_key=True)
+    _gameswon = db.Column(db.Integer, primary_key=True)
+    _gameslost = db.Column(db.Integer, primary_key=True)
 
     # Constructor of a NFLNews object, initializes the instance variables within object (self)
 
