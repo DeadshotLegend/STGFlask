@@ -26,12 +26,12 @@ class NFLNews(db.Model):
 
     # Constructor of a NFLNews object, initializes the instance variables within object (self)
 
-    def __init__(self, teams, score, type, day=date.today()):
+    def __init__(self, team, gamesplayed, gameswon, gameslost):
 
-        self._teams = teams    # variables with "own"" prefix become part of the object
-        self._score = score
-        self._type = type
-        self._day = day
+        self._team = team    # variables with "own"" prefix become part of the object
+        self._gamesplayed = gamesplayed
+        self._gameswon = gameswon
+        self._gameslost = gameslost
 
     # Getter and setter methods for all variables
 
