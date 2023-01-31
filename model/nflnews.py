@@ -23,6 +23,21 @@ class NFLNews(db.Model):
     _gamesplayed = db.Column(db.Integer, primary_key=True)
     _gameswon = db.Column(db.Integer, primary_key=True)
     _gameslost = db.Column(db.Integer, primary_key=True)
+    _gamesdrawn = db.Column(db.Integer, primary_key=True)
+    _pct = db.Column(db.Integer, primary_key=True)
+    _pf = db.Column(db.Integer, primary_key=True)
+    _pa = db.Column(db.Integer, primary_key=True)
+    _gamesplayedathome = db.Column(db.Integer, primary_key=True)
+    _gamesplayedaway = db.Column(db.Integer, primary_key=True)
+    _gameswonathome = db.Column(db.Integer, primary_key=True)
+    _gameslostathome = db.Column(db.Integer, primary_key=True)
+    _gameswonaway = db.Column(db.Integer, primary_key=True)
+    _gameslostaway = db.Column(db.Integer, primary_key=True)
+    _gamesplayed5 = db.Column(db.Integer, primary_key=True)
+    _gameswon5 = db.Column(db.Integer, primary_key=True)
+    _gameslost5 = db.Column(db.Integer, primary_key=True)
+    
+    
 
     # Constructor of a NFLNews object, initializes the instance variables within object (self)
 
