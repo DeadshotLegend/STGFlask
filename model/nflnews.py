@@ -61,42 +61,79 @@ class NFLNews(db.Model):
     # Getter and setter methods for all variables
 
     @property
-    def teams(self):
-        return self._teams
+    def team(self):
+        return self._team
     
-    @teams.setter
-    def teams(self, teams):
-        self._teams = teams
+    @team.setter
+    def team(self, team):
+        self._teams = team
     
     @property
-    def score(self):
-        return self._score
+    def gamesplayed(self):
+        return self._gamesplayed
     
-    @score.setter
-    def score(self, score):
-        self._score = score
+    @gamesplayed.setter
+    def gamesplayed(self, gamesplayed):
+        self._gamesplayed = gamesplayed
+
+    @property
+    def gameswon(self):
+        return self._gameswon
+    
+    @gameswon.setter
+    def gamesplayed(self, gameswon):
+        self._gameswon = gameswon
+
+    @property
+    def gameslost(self):
+        return self._gameslost
+    
+    @gameslost.setter  
+    def gamesplayed(self, gameslost):
+       self._gameslost = gameslost
 
 
     @property
-    def type(self):
-        return self._type
+    def gamesplayedathome(self):
+        return self._gamesplayedathome
     
-    @type.setter
-    def type(self, type):
-        self._type = type
+    @gamesplayedathome.setter
+    def gamesplayed(self, gamesplayedathome):
+       self._gamesplayedathome = gamesplayedathome
 
-      
     @property
-    def day(self):
-        day_string = self._day.strftime('%m-%d-%Y')
-        return day_string
+    def gamesplayedaway(self):
+        return self._gamesplayedaway
     
+    @gamesplayedaway.setter
+    def gamesplayedaway(self, gamesplayedaway):
+       self._gamesplayedaway = gamesplayedaway
 
-    @day.setter
-    def day(self, day):
-        self._day = day
+
+    @property
+    def gameswonathome(self):
+        return self._gameswonathome
     
+    @gameswonathome.setter
+    def gameswonathome(self, gameswonathome):
+       self._gameswonathome = gameswonathome
+
+    @property
+    def gameslostathome(self):
+        return self._gameslostathome
     
+    @gameslostathome.setter
+    def gameslostathome(self, gameslostathome):
+       self._gameslostathome = gameslostathome
+
+
+
+
+
+
+
+
+     
     
   
     def __str__(self):
@@ -113,6 +150,11 @@ class NFLNews(db.Model):
             db.session.remove()
             return None
 
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
 
     def read(self):
         return {
@@ -123,11 +165,6 @@ class NFLNews(db.Model):
             "day": self.day
             
         }
-    
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-        return None
 
 
 """Database Creation and Testing """
