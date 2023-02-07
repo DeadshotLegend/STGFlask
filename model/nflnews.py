@@ -58,7 +58,8 @@ class NFLNews(db.Model):
         self._gameswon5 = gameswon5
         self._gameslost5 = gameslost5
 
-    # Getter and setter methods for all variables
+  
+    """Setter and Getter Methods for all Variables"""  
 
     @property
     def team(self):
@@ -154,7 +155,7 @@ class NFLNews(db.Model):
     def __str__(self):
         return json.dumps(self.read())
 
-    
+    """CRUD METHODS """  
     def create(self):
         try:
             # creates a NFL News object from NFLNews(db.Model) class, passes initializers
