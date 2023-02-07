@@ -66,7 +66,7 @@ class NFLNews(db.Model):
     
     @team.setter
     def team(self, team):
-        self._teams = team
+        self._team = team
     
     @property
     def gamesplayed(self):
@@ -81,7 +81,7 @@ class NFLNews(db.Model):
         return self._gameswon
     
     @gameswon.setter
-    def gamesplayed(self, gameswon):
+    def gameswon(self, gameswon):
         self._gameswon = gameswon
 
     @property
@@ -89,9 +89,16 @@ class NFLNews(db.Model):
         return self._gameslost
     
     @gameslost.setter  
-    def gamesplayed(self, gameslost):
+    def gameslost(self, gameslost):
        self._gameslost = gameslost
 
+    @property
+    def gamesdrawn(self):
+        return self._gamesdrawn
+    
+    @gamesdrawn.setter  
+    def gameslost(self, gameslost):
+       self._gameslost = gameslost
 
     @property
     def gamesplayedathome(self):
@@ -125,6 +132,23 @@ class NFLNews(db.Model):
     @gameslostathome.setter
     def gameslostathome(self, gameslostathome):
        self._gameslostathome = gameslostathome
+
+    @property
+    def gameswonaway(self):
+        return self._gameswonaway
+    
+    @gameswonaway.setter
+    def gameswonaway(self, gameswonaway):
+       self._gameswonaway = gameswonaway
+
+    @property
+    def gameslostaway(self):
+        return self._gameslostaway
+    
+    @gameslostaway.setter
+    def  gameslostaway(self, gameslostaway):
+       self._gameslostaway = gameslostaway
+
 
 
     def __str__(self):
