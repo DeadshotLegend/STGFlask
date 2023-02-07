@@ -127,15 +127,6 @@ class NFLNews(db.Model):
        self._gameslostathome = gameslostathome
 
 
-
-
-
-
-
-
-     
-    
-  
     def __str__(self):
         return json.dumps(self.read())
 
