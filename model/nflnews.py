@@ -36,6 +36,8 @@ class NFLNews(db.Model):
     _gamesplayed5 = db.Column(db.Integer, primary_key=True)
     _gameswon5 = db.Column(db.Integer, primary_key=True)
     _gameslost5 = db.Column(db.Integer, primary_key=True)
+    _pointsfor = db.Column(db.Integer, primary_key=True)
+    _pointsagainst = db.Column(db.Integer, primary_key=True)
     
     
 
