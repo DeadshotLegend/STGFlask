@@ -151,6 +151,34 @@ class NFLNews(db.Model):
        self._gameslostaway = gameslostaway
 
 
+    @property
+    def gamesplayed5(self):
+        return self._gamesplayed5
+    
+    @gamesplayed5.setter
+    def  gamesplayed5(self, gamesplayed5):
+       self._gamesplayed5 = gamesplayed5
+
+    @property
+    def gameswon5(self):
+        return self._gameswon5
+    
+    @gameswon5.setter
+    def  gameswon5(self, gameswon5):
+       self._gameswon5 = gameswon5
+
+    @property
+    def gameslost5(self):
+        return self._gameslost5
+    
+    @gameslost5.setter
+    def  gameslost5(self, gameslost5):
+       self._gameslost5 = gameslost5
+
+
+
+
+
 
     def __str__(self):
         return json.dumps(self.read())
