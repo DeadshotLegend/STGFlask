@@ -38,12 +38,13 @@ class NFLNews(db.Model):
     _gameslost5 = db.Column(db.Integer, primary_key=True)
     _pointsfor = db.Column(db.Integer, primary_key=True)
     _pointsagainst = db.Column(db.Integer, primary_key=True)
+    _pointsinfourthquarter = db.Column(db.Integer, primary_key=True)
     
     
 
     # Constructor of a NFLNews object, initializes the instance variables within object (self)
 
-    def __init__(self, team, gamesplayed, gameswon, gameslost, gamesdrawn, gamesplayedathome, gamesplayedaway, gameswonathome, gameslostathome, gameswonaway, gameslostaway, gamesplayed5, gameswon5, gameslost5, pointsfor, pointsagainst):
+    def __init__(self, team, gamesplayed, gameswon, gameslost, gamesdrawn, gamesplayedathome, gamesplayedaway, gameswonathome, gameslostathome, gameswonaway, gameslostaway, gamesplayed5, gameswon5, gameslost5, pointsfor, pointsagainst, pointsinfourthquarter):
 
         self._team = team    # variables with "own"" prefix become part of the object
         self._gamesplayed = gamesplayed
@@ -61,6 +62,7 @@ class NFLNews(db.Model):
         self._gameslost5 = gameslost5
         self._pointsfor = pointsfor
         self._pointsagainst = pointsagainst
+        self._pointsinfourthquarter = pointsinfourthquarter
 
   
     """Setter and Getter Methods for all Variables"""  
