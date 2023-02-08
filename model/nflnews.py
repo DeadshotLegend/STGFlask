@@ -104,15 +104,15 @@ class NFLNews(db.Model):
         return self._gamesdrawn
     
     @gamesdrawn.setter  
-    def gameslost(self, gameslost):
-       self._gameslost = gameslost
+    def gamesdrawn(self, gamesdrawn):
+       self._gamesdrawn = gamesdrawn
 
     @property
     def gamesplayedathome(self):
         return self._gamesplayedathome
     
     @gamesplayedathome.setter
-    def gamesplayed(self, gamesplayedathome):
+    def gamesplayedathome(self, gamesplayedathome):
        self._gamesplayedathome = gamesplayedathome
 
     @property
@@ -168,7 +168,7 @@ class NFLNews(db.Model):
         return self._gameswon5
     
     @gameswon5.setter
-    def  gameswon5(self, gameswon5):
+    def gameswon5(self, gameswon5):
        self._gameswon5 = gameswon5
 
     @property
