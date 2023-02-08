@@ -24,9 +24,6 @@ class NFLNews(db.Model):
     _gameswon = db.Column(db.Integer, primary_key=True)
     _gameslost = db.Column(db.Integer, primary_key=True)
     _gamesdrawn = db.Column(db.Integer, primary_key=True)
-    _pct = db.Column(db.Integer, primary_key=True)
-    _pf = db.Column(db.Integer, primary_key=True)
-    _pa = db.Column(db.Integer, primary_key=True)
     _gamesplayedathome = db.Column(db.Integer, primary_key=True)
     _gamesplayedaway = db.Column(db.Integer, primary_key=True)
     _gameswonathome = db.Column(db.Integer, primary_key=True)
@@ -39,6 +36,10 @@ class NFLNews(db.Model):
     _pointsfor = db.Column(db.Integer, primary_key=True)
     _pointsagainst = db.Column(db.Integer, primary_key=True)
     _pointsinfourthquarter = db.Column(db.Integer, primary_key=True)
+    _pctoverall = db.Column(db.Integer, primary_key=True)
+    _pcthome = db.Column(db.Integer, primary_key=True)
+    _pctaway = db.Column(db.Integer, primary_key=True)
+    _pctlast5 = db.Column(db.Integer, primary_key=True)
     
     
 
