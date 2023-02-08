@@ -176,8 +176,32 @@ class NFLNews(db.Model):
         return self._gameslost5
     
     @gameslost5.setter
-    def  gameslost5(self, gameslost5):
+    def gameslost5(self, gameslost5):
        self._gameslost5 = gameslost5
+
+    @property
+    def pointsfor(self):
+        return self._pointsfor
+    
+    @pointsfor.setter
+    def pointsfor(self, pointsfor):
+       self._pointsfor = pointsfor
+   
+    @property
+    def pointsagainst(self):
+        return self._pointsagainst
+    
+    @pointsagainst.setter
+    def pointsagainst(self, pointsagainst):
+       self._pointsagainst = pointsagainst
+
+    @property
+    def pointsinfourthquarter(self):
+        return self._pointsinfourthquarter
+    
+    @pointsinfourthquarter.setter
+    def pointsinfourthquarter(self, pointsinfourthquarter):
+       self._pointsinfourthquarter = pointsinfourthquarter
 
 
     def __str__(self):
