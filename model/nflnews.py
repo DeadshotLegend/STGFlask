@@ -9,7 +9,7 @@ from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-''' Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along '''
+'''Class Setup '''
 
     # Defining the NFLNews class to manage actions in the 'news' table
 
@@ -174,12 +174,9 @@ class NFLNews(db.Model):
        self._gameslost5 = gameslost5
 
 
-
-
-
-
     def __str__(self):
         return json.dumps(self.read())
+
 
     """CRUD METHODS """  
     def create(self):
@@ -207,6 +204,7 @@ class NFLNews(db.Model):
             "day": self.day
             
         }
+
 
 
 """Database Creation and Testing """
