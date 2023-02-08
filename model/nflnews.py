@@ -117,7 +117,6 @@ class NFLNews(db.Model):
     def gamesplayedaway(self, gamesplayedaway):
        self._gamesplayedaway = gamesplayedaway
 
-
     @property
     def gameswonathome(self):
         return self._gameswonathome
@@ -149,7 +148,6 @@ class NFLNews(db.Model):
     @gameslostaway.setter
     def  gameslostaway(self, gameslostaway):
        self._gameslostaway = gameslostaway
-
 
     @property
     def gamesplayed5(self):
