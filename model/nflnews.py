@@ -227,11 +227,10 @@ class NFLNews(db.Model):
 
     def read(self):
         return {
-            "id": self.id,
-            "teams": self.teams,
-            "score": self.score,
-            "type": self.type,
-            "day": self.day
+            "team": self.team,
+            "gamesplayed": self._gamesplayed,
+            "gameswon": self.gameswon,
+            "gameslost": self.gameslost
             
         }
 
