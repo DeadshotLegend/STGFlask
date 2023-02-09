@@ -20,6 +20,7 @@ class NFLTeam(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     _team = db.Column(db.String(255), unique=False, nullable=False)
+    _playoffs = db.Column(db.String(255), unique=False, nullable=False)
     _gamesplayed = db.Column(db.Integer, primary_key=True)
     _gameswon = db.Column(db.Integer, primary_key=True)
     _gameslost = db.Column(db.Integer, primary_key=True)
@@ -45,7 +46,7 @@ class NFLTeam(db.Model):
 
     # Constructor of a NFLTeam object, initializes the instance variables within object (self)
 
-    def __init__(self, team, gamesplayed, gameswon, gameslost, gamesdrawn, gamesplayedathome, gamesplayedaway, gameswonathome, gameslostathome, gameswonaway, gameslostaway, gamesplayed5, gameswon5, gameslost5, pointsfor, pointsagainst, pointsinfourthquarter):
+    def __init__(self, team, gamesplayed, gameswon, gameslost, gamesdrawn, gamesplayedathome, gamesplayedaway, gameswonathome, gameslostathome, gameswonaway, gameslostaway, gamesplayed5, gameswon5, gameslost5, pointsfor, pointsagainst, pointsinfourthquarter, playoffs):
 
         self._team = team    # variables with "own"" prefix become part of the object
         self._gamesplayed = gamesplayed
@@ -64,6 +65,7 @@ class NFLTeam(db.Model):
         self._pointsfor = pointsfor
         self._pointsagainst = pointsagainst
         self._pointsinfourthquarter = pointsinfourthquarter
+        self._playoffs = playoffs
 
   
     """Setter and Getter Methods for all Variables"""  
@@ -248,6 +250,9 @@ def initNFLNews():
     """Tester data for table"""
 
     
+    t3 = NFLTeam(team = "Washington Commanders", gamesplayed = 17, gameswon = 8, gameslost = 8, gamesdrawn = 1, gamesplayedathome=9, gamesplayedaway=8, gameswonathome=4, gameslostathome=5, gameswonaway=4, gameslostaway=3, gamesplayed5=5, gameswon5=2, gameslost5=3, pointsfor=321, pointsagainst=343)
+    t3 = NFLTeam(team = "New York Giants", gamesplayed = 17, gameswon = 8, gameslost = 8, gamesdrawn = 1, gamesplayedathome=9, gamesplayedaway=8, gameswonathome=4, gameslostathome=5, gameswonaway=4, gameslostaway=3, gamesplayed5=5, gameswon5=2, gameslost5=3, pointsfor=321, pointsagainst=343)
+
     t1 = NFLTeam(team = "Arizona Cradinals", gamesplayed = 17, gameswon = 4, gameslost = 13, gamesdrawn = 0, gamesplayedathome=9, gamesplayedaway=8, gameswonathome=1, gameslostathome=8, gameswonaway=3, gameslostaway=5, gamesplayed5=5, gameswon5=0, gameslost5=5, pointsfor=340, pointsagainst=449, pointsinfourthquarter=70)
     t2 = NFLTeam(team = "Los Angeless Rams", gamesplayed = 17, gameswon = 5, gameslost = 12, gamesdrawn = 0, gamesplayedathome=9, gamesplayedaway=8, gameswonathome=4, gameslostathome=5, gameswonaway=1, gameslostaway=7, gamesplayed5=5, gameswon5=3, gameslost5=2, pointsfor=307, pointsagainst=384, pointsinfourthquarter=84)
     t3 = NFLTeam(team = "Washington Commanders", gamesplayed = 17, gameswon = 8, gameslost = 8, gamesdrawn = 1, gamesplayedathome=9, gamesplayedaway=8, gameswonathome=1, gameslostathome=9, gameswonaway=3, gameslostaway=5, gamesplayed5=5, gameswon5=2, gameslost5=3, pointsfor=321, pointsagainst=343, pointsinfourthquarter=74)
