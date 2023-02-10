@@ -291,4 +291,4 @@ def initNFLNews():
         except IntegrityError:
             '''fails with bad or duplicate data'''
             db.session.remove()
-            print(f"Records exist, duplicate email, or error: {news.uid}")
+            print(f"Records exist, duplicate email, or error: {team.uid}")
